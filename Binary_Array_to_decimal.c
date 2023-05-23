@@ -1,17 +1,24 @@
 #include<stdio.h>
-#include<math.h>
+int power(int a,int b)
+{
+    int pr=1;
+    for(int i=1;i<=b;i++)
+    {
+        pr=pr*a;
+    }
+    return pr;
+}
 int main()
 {
-    int n;
+    int n,s=0;
     scanf("%d",&n);
+    int a[n];
     int t=n-1;
-    int s=0;
-    for(int i=1;i<=n;i++)
+    for(int i=0;i<n;i++)
     {
-        int a;
-        scanf("%d",&a);
-        s=s+pow(2,t)*a;
-        t=t-1;
+        scanf("%d",&a[i]);
+        s=s+a[i]*(power(2,t));
+        t--;
     }
     printf("%d",s);
 }

@@ -1,10 +1,10 @@
 #include<stdio.h>
-int prime(int a)
+int prime(int n)
 {
     int c=0;
-    for(int i=1;i<=a;i++)
+    for(int i=1;i<=n;i++)
     {
-        if(a%i==0)
+        if(n%i==0)
         {
             c++;
         }
@@ -20,13 +20,13 @@ int prime(int a)
 }
 int main()
 {
-    int n;
-    scanf("%d",&n);
-    for(int i=1;i<=n;i++)
+    int x,f,b;
+    scanf("%d",&x);
+    for(int i=1;i<=x;i++)
     {
-        int a,f,b;
-        scanf("%d",&a);
-        for(int i=a;;i++)
+        int n;
+        scanf("%d",&n);
+        for(int i=n;;i++)
         {
             if(prime(i))
             {
@@ -34,7 +34,7 @@ int main()
                 break;
             }
         }
-        for(int i=a;;i--)
+        for(int i=n;;i--)
         {
             if(prime(i))
             {
@@ -42,17 +42,18 @@ int main()
                 break;
             }
         }
-        int d1=f-a;
-        int d2=a-b;
-        if(d1>=d2)
-        {
-            printf("%d
-",b);
-        }
-        else
+        int d1=f-n;
+        int d2=n-b;
+        if(d1<d2)
         {
             printf("%d
 ",f);
         }
+        else if(d2<=d1)
+        {
+            printf("%d
+",b);
+        }
     }
+    
 }

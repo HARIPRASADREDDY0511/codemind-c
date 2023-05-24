@@ -1,57 +1,45 @@
 #include<stdio.h>
-int fib(int n)
-{
-    int a,b;
-    a=0;
-    b=1;
-    int c=a+b;
-    while(n>c)
-    {
-        a=b;
-        b=c;
-        c=a+b;
-    }
-    if(c==n)
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
-}
 int main()
 {
-    int n,back,forw;
+    int n,a=0,b=1,x=0,y=1,c,z,w,m;
     scanf("%d",&n);
-    for(int i=n;;i++)
+    for(int i=1;i<=n;i++)
     {
-        if(fib(i))
+         if(a>n)
         {
-            forw=i;
+            w=c-a;
             break;
         }
+        c=a+b;
+        a=b;
+        b=c;
     }
-    for(int i=n-1;;i--)
+    
+    for(int j=1;j<=n;j++)
     {
-        if(fib(i))
+        if(x>n)
         {
-            back=i;
+            m=x;
             break;
         }
-    }
-    int d1=forw-n;
-    int d2=n-back;
-    if(d1==d2)
+        //printf("%d ",x);
+        z=x+y;
+        x=y;
+        y=z;
+    } 
+    int d1=n-w;
+    int d2=m-n;
+    if(d1<d2)
     {
-        printf("%d %d",back,forw);
+        printf("%d",w);
     }
-    else if(d1>d2)
+    else if(d2<d1)
     {
-        printf("%d",back);
+        printf("%d",m);
     }
-    else
+    else if(d1==d2)
     {
-        printf("%d",forw);
+        printf("%d %d",w,m);
     }
+    
 }

@@ -10,15 +10,17 @@ int main()
         c++;
         n=n/10;
     }
-    int a[c],i=0;
+    int tem=c;
+    int a[c];
     while(t!=0)
     {
         r=t%10;
-        a[i]=r;
-        i++;
+        // printf("%d ",r);
+        a[c]=r;
+        c--;
         t=t/10;
     }
-    for(int i=c-1;i>=0;i--)
+    for(int i=1;i<=tem;i++)
     {
         if(a[i]==6)
         {
@@ -26,9 +28,8 @@ int main()
             break;
         }
     }
-    for(int i=c-1;i>=0;i--)
+    for(int i=1;i<=tem;i++)
     {
         printf("%d",a[i]);
     }
-    
 }

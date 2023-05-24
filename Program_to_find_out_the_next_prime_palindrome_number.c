@@ -1,10 +1,10 @@
 #include<stdio.h>
-int prime(int a)
+int prime(int n)
 {
     int c=0;
-    for(int i=1;i<=a;i++)
+    for(int i=1;i<=n;i++)
     {
-        if(a%i==0)
+        if(n%i==0)
         {
             c++;
         }
@@ -18,17 +18,16 @@ int prime(int a)
         return 0;
     }
 }
-int rev(int i)
+int pal(int n)
 {
-    int t=i;
-    int rev=0,r;
-    while(i!=0)
+    int t=n,r,rv=0;
+    while(n!=0)
     {
-        r=i%10;
-        rev=rev*10+r;
-        i=i/10;
+        r=n%10;
+        rv=rv*10+r;
+        n=n/10;
     }
-    if(rev==t)
+    if(rv==t)
     {
         return 1;
     }
@@ -39,18 +38,15 @@ int rev(int i)
 }
 int main()
 {
-        int x,f;
-        scanf("%d",&x);
-        for(int i=x+1;;i++)
+    int n;
+    scanf("%d",&n);
+    for(int i=n+1;;i++)
+    {
+        if(prime(i)&&pal(i))
         {
-            if(prime(i))
-            {
-                if(rev(i))
-                {
-                        printf("%d",i);
-                        break;
-                    
-                }
-            }
+            printf("%d",i);
+            break;
         }
+        
+    }
 }

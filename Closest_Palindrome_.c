@@ -1,7 +1,7 @@
 #include<stdio.h>
 int pal(int n)
 {
-    int r,rv=0,t=n;
+    int t=n,r,rv=0;
     while(n!=0)
     {
         r=n%10;
@@ -33,8 +33,8 @@ int main()
     {
         if(pal(i))
         {
-            b=i;
-            break;
+        b=i;
+        break;
         }
     }
     int d1=f-n;
@@ -43,13 +43,13 @@ int main()
     {
         printf("%d",f);
     }
+    else if(d1==d2)
+    {
+        printf("%d %d",b,f);
+    }
     else if(d2<d1)
     {
         printf("%d",b);
-    }
-    else
-    {
-        printf("%d %d",b,f);
     }
     
 }

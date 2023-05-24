@@ -3,13 +3,9 @@ int main()
 {
     int n;
     scanf("%d",&n);
-    while(n!=1)
+    while(n!=0)
     {
-        if(n%5==0)
-        {
-            n=n/5;
-        }
-        else if(n%2==0)
+        if(n%2==0)
         {
             n=n/2;
         }
@@ -17,12 +13,21 @@ int main()
         {
             n=n/3;
         }
+        else if(n%5==0)
+        {
+            n=n/5;
+        }
         else
         {
-            printf("Not Ugly Number");
-            return 0;
+            break;
         }
-        
     }
-    printf("Ugly Number");
+    if(n==1)
+    {
+        printf("Ugly Number");
+    }
+    else
+    {
+        printf("Not Ugly Number");
+    }
 }
